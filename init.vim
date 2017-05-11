@@ -11,31 +11,44 @@ colorscheme monokai
 " Show line numbers
 set number
 
+" Set tab size
+set tabstop=4
+set shiftwidth=4
+
 " Autodetect file types on buffer opening and
 " enable specific indentation and plugins
 filetype plugin indent on
 
-" PLUGINS
+" Interface response time to changes in ms
+set updatetime=250
+
+
+" MY PLUGINS
 
 " Automatically install vim-plug if missing
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Specify a directory for plugins
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
 call plug#end()
+
 
 " MY KEYBINDINGS
 " Set <Leader> to Space
 let mapleader = " "
 
+" Autoindent
+map <Leader>i mzgg=G`z
 
 " CUSTOM MOVEMENTS
 
@@ -85,4 +98,5 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " Fast switch to previous buffer
 nnoremap <Leader><Leader> :e#<CR>
 
+" STATUSBAR CONFIGURATION
 
