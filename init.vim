@@ -21,6 +21,9 @@ filetype plugin indent on
 let mapleader = " "
 
 
+" CUSTOM MOVEMENTS
+
+
 " ADVANCED SETTINGS
 " Highlight trailing whitespaces
 highlight Trail ctermbg=red guibg=red
@@ -36,6 +39,14 @@ autocmd BufWritePre * :%s/\s\+$//e
 inoremap ( ()<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
+
+" Wrappings in visual mode
+vnoremap ( <Esc>`>a)<Esc>`<i(<Esc>
+vnoremap ) <Esc>`>a )<Esc>`<i( <Esc>
+vnoremap [ <Esc>`>a]<Esc>`<i[<Esc>
+vnoremap ] <Esc>`>a ]<Esc>`<i[ <Esc>
+vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
+vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
 
 
 " TEXT EDITING
