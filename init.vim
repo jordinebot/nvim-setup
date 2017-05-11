@@ -14,6 +14,7 @@ set number
 " Set tab size
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 
 " Insert spaces when TAB is pressed.
 set expandtab
@@ -51,9 +52,26 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+Plug 'mattn/emmet-vim'
 
 " Initialize plugin system
 call plug#end()
+
+
+" PLUGIN SETTINGS
+
+" Auto open NERDtree on enter vim
+au VimEnter *  NERDTree /git/
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,php EmmetInstall
+
+" Emmet expand with TAB
+" autocmd BufNewFile,BufRead *.html,*.php imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+let g:user_emmet_expandabbr_key='<Tab>'
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>"let g:user_emmet_expandabbr_key='<Tab>'
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 
 " MY KEYBINDINGS
@@ -65,6 +83,11 @@ map <Leader>r mzgg=G`z
 
 
 " ADVANCED SETTINGS
+
+" Set paths for python
+let g:python_host_prog  = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " Highlight trailing whitespaces
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
@@ -106,6 +129,10 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " BUFFER HANDLING
+
+" Allow hidden buffers (to switch without save first)
+set hidden
+
 " Fast switch to previous buffer
 nnoremap <Leader><Leader> :e#<CR>
 " List buffers
