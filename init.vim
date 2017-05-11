@@ -15,6 +15,15 @@ set number
 set tabstop=4
 set shiftwidth=4
 
+" Insert spaces when TAB is pressed.
+set expandtab
+
+" Make searching case insensitive
+set ignorecase
+
+" ... unless the query has capital letters.
+set smartcase
+
 " Autodetect file types on buffer opening and
 " enable specific indentation and plugins
 filetype plugin indent on
@@ -22,14 +31,18 @@ filetype plugin indent on
 " Interface response time to changes in ms
 set updatetime=250
 
+" More natural splits
+set splitbelow          " Horizontal split below current.
+set splitright          " Vertical split to right of current.:w
+
 
 " MY PLUGINS
 
 " Automatically install vim-plug if missing
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Specify a directory for plugins
@@ -44,13 +57,11 @@ call plug#end()
 
 
 " MY KEYBINDINGS
-" Set <Leader> to Space
-let mapleader = " "
+" Set <Leader> key
+let mapleader=","
 
-" Autoindent
-map <Leader>i mzgg=G`z
-
-" CUSTOM MOVEMENTS
+" Reindent
+map <Leader>r mzgg=G`z
 
 
 " ADVANCED SETTINGS
@@ -97,6 +108,6 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " BUFFER HANDLING
 " Fast switch to previous buffer
 nnoremap <Leader><Leader> :e#<CR>
-
-" STATUSBAR CONFIGURATION
+" List buffers
+map <Leader>. :ls<CR>:b
 
