@@ -64,6 +64,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'crusoexia/vim-javascript-lib'
 
 " Initialize plugin system
 call plug#end()
