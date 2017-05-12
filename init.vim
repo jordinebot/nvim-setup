@@ -66,6 +66,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-javascript-lib'
+Plug 'stanangeloff/php.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -190,3 +191,20 @@ nnoremap <A-j> <C-w><C-j>
 nnoremap <A-k> <C-w><C-k>
 nnoremap <A-l> <C-w><C-l>
 
+
+
+" -----------------------------------------------
+"  SPECIAL SETTINGS
+" -----------------------------------------------
+
+" Put at the very end of your .vimrc file.
+" http://vimawesome.com/plugin/php-vim-shouldve-said-no
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
