@@ -68,6 +68,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-javascript-lib'
 Plug 'stanangeloff/php.vim'
 Plug 'mattn/webapi-vim'                 " https://github.com/mattn/emmet-vim/#adding-custom-snippets
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Initialize plugin system
 call plug#end()
@@ -77,6 +78,9 @@ call plug#end()
 " -----------------------------------------------
 " PLUGIN SETTINGS
 " -----------------------------------------------
+
+" Enable deoplete (for local autocompletion) on startup
+let g:deoplete#enable_at_startup = 1
 
 " Auto open NERDtree on enter vim
 au VimEnter *  NERDTree /git/
