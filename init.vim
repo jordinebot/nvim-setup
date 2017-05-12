@@ -1,23 +1,30 @@
+" -----------------------------------------------
 " BASIC SETTINGS
+" -----------------------------------------------
+
 " Set nvim interface language to en_US
 language en_US
 
 " Enable syntax highlight with Monokai Theme
-" Requires ~/.config/nvim/colors/monokai.vim from
-" https://github.com/sickill/vim-monokai
 syntax enable
 colorscheme monokai
 
 " Show line numbers
 set number
 
-" Set tab size
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" Show command in bottom bar
+set showcmd
 
-" Insert spaces when TAB is pressed.
-set expandtab
+" Highlight current line
+set cursorline
+
+" Tabs & Indent
+set tabstop=4       " spaces per TAB
+set shiftwidth=4    " spaces per TAB for autoindent
+set softtabstop=4   " spaces per TAB when editing
+set expandtab       " TAB with spaces
+set autoindent
+set copyindent      " copy indent from the previous line
 
 " Make searching case insensitive
 set ignorecase
@@ -34,10 +41,12 @@ set updatetime=250
 
 " More natural splits
 set splitbelow          " Horizontal split below current.
-set splitright          " Vertical split to right of current.:w
+set splitright          " Vertical split to right of current.
 
 
+" -----------------------------------------------
 " MY PLUGINS
+" -----------------------------------------------
 
 " Automatically install vim-plug if missing
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -49,6 +58,7 @@ endif
 " Specify a directory for plugins
 call plug#begin('~/.config/nvim/plugged')
 
+" Installed plugins
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -59,7 +69,10 @@ Plug 'mattn/emmet-vim'
 call plug#end()
 
 
+
+" -----------------------------------------------
 " PLUGIN SETTINGS
+" -----------------------------------------------
 
 " Auto open NERDtree on enter vim
 au VimEnter *  NERDTree /git/
@@ -67,22 +80,33 @@ au VimEnter *  NERDTree /git/
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,php EmmetInstall
 
-" Emmet expand with TAB
-" autocmd BufNewFile,BufRead *.html,*.php imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-let g:user_emmet_expandabbr_key='<Tab>'
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>"let g:user_emmet_expandabbr_key='<Tab>'
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 
+" -----------------------------------------------
 " MY KEYBINDINGS
+" -----------------------------------------------
+
 " Set <Leader> key
 let mapleader=","
 
+" Edit/reload vimrc
+nmap <Leader>ev :e $MYVIMRC<CR>
+nmap <Leader>sv :so $MYVIMRC<CR>
+
+" better Esc
+inoremap jj <Esc>
+
 " Reindent
-map <Leader>r mzgg=G`z
+nnoremap <leader>r mzgg=G`z<CR>
 
 
+" Toggle NERDtree
+map <C-n> :NERDTreeToggle<CR>
+
+
+" -----------------------------------------------
 " ADVANCED SETTINGS
+" -----------------------------------------------
 
 " Set paths for python
 let g:python_host_prog  = '/usr/local/bin/python2'
@@ -92,8 +116,15 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 highlight Trail ctermbg=red guibg=red
 call matchadd('Trail', '\s\+$', 100)
 
+" Cancel a search with Esc
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
+
+
+" -----------------------------------------------
 " AUTOMATIC ACTIONS
+" -----------------------------------------------
+
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -102,6 +133,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 inoremap ( ()<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
+inoremap {<CR> {<CR>}<Esc>ko
 
 " Wrappings in visual mode
 vnoremap ( <Esc>`>a)<Esc>`<i(<Esc>
@@ -112,7 +144,10 @@ vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
 vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
 
 
+
+" -----------------------------------------------
 " TEXT EDITING
+" -----------------------------------------------
 
 " Quick way to move lines of text up or down.
 
@@ -121,20 +156,35 @@ nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
 " Insert mode
-inoremap <C-k> <ESC>:m .-2<CR>==gi
-inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+inoremap <C-j> <Esc>:m .+1<CR>==gi
 
 " Visual mode
 vnoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-" BUFFER HANDLING
+
+
+" -----------------------------------------------
+" BUFFER & SPLIT NAVIGATION
+" -----------------------------------------------
 
 " Allow hidden buffers (to switch without save first)
 set hidden
 
 " Fast switch to previous buffer
 nnoremap <Leader><Leader> :e#<CR>
+
 " List buffers
 map <Leader>. :ls<CR>:b
+
+" Fast Next / Previous buffer
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
+
+" Split navigation
+nnoremap <A-h> <C-w><C-h>
+nnoremap <A-j> <C-w><C-j>
+nnoremap <A-k> <C-w><C-k>
+nnoremap <A-l> <C-w><C-l>
 
