@@ -67,6 +67,7 @@ Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-javascript-lib'
 Plug 'stanangeloff/php.vim'
+Plug 'mattn/webapi-vim'                 " https://github.com/mattn/emmet-vim/#adding-custom-snippets
 
 " Initialize plugin system
 call plug#end()
@@ -80,9 +81,9 @@ call plug#end()
 " Auto open NERDtree on enter vim
 au VimEnter *  NERDTree /git/
 
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,php EmmetInstall
-
+" Use another Emmet Leader key
+let g:user_emmet_leader_key=','
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/snippets/my_snippets.json')), "\n"))
 
 
 " -----------------------------------------------
@@ -176,7 +177,8 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 set hidden
 
 " Fast switch to previous buffer
-nnoremap <Leader><Leader> :e#<CR>
+" Trying , as Emmet's Leader. Also this can be achieved with <S-Tab> too.
+" nnoremap <Leader><Leader> :e#<CR>
 
 " List buffers
 map <Leader>. :ls<CR>:b
