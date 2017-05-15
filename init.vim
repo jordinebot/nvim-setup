@@ -69,6 +69,7 @@ Plug 'crusoexia/vim-javascript-lib'
 Plug 'stanangeloff/php.vim'
 Plug 'mattn/webapi-vim'                 " https://github.com/mattn/emmet-vim/#adding-custom-snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'junegunn/vim-easy-align'
 
 " Initialize plugin system
 call plug#end()
@@ -89,6 +90,11 @@ au VimEnter *  NERDTree /git/
 let g:user_emmet_leader_key=','
 let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/snippets/my_snippets.json')), "\n"))
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " -----------------------------------------------
 " MY KEYBINDINGS
@@ -105,7 +111,7 @@ nmap <Leader>sv :so $MYVIMRC<CR>
 inoremap jj <Esc>
 
 " Reindent
-nnoremap <leader>r mzgg=G`z<CR>
+nnoremap <leader>i mzgg=G`z<CR>
 
 
 " Toggle NERDtree
@@ -127,6 +133,15 @@ call matchadd('Trail', '\s\+$', 100)
 " Cancel a search with Esc
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
+" Save on leaving Insert mode
+inoremap <Esc> <Esc>:w<CR>
+
+" Replace all occurrences of word under cursor in the whole file
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" Close current buffer without losing split
+" http://stackoverflow.com/a/4468491/1534704
+nnoremap <C-c> :bp\|bd #<CR>
 
 
 " -----------------------------------------------
