@@ -72,6 +72,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
 Plug 'chrisbra/Colorizer'
+Plug 'kchmck/vim-coffee-script'
 
 " Initialize plugin system
 call plug#end()
@@ -99,7 +100,9 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Colorize HEX, RGB, RGBA codes on some filestypes
-:let g:colorizer_auto_filetype='css,scss'
+let g:colorizer_auto_filetype='css,scss'
+
+
 
 " -----------------------------------------------
 " MY KEYBINDINGS
@@ -159,7 +162,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Automatically close parenthesis & quotes
 " on Insert mode
 inoremap ( ()<Esc>i
-inoremap ' ''<Esc>i
+" inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
 inoremap {<CR> {<CR>}<Esc>ko
 
@@ -169,7 +172,7 @@ vnoremap ) <Esc>`>a )<Esc>`<i( <Esc>
 vnoremap [ <Esc>`>a]<Esc>`<i[<Esc>
 vnoremap ] <Esc>`>a ]<Esc>`<i[ <Esc>
 vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
-vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
+" vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
 
 
 
