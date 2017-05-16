@@ -70,6 +70,8 @@ Plug 'stanangeloff/php.vim'
 Plug 'mattn/webapi-vim'                 " https://github.com/mattn/emmet-vim/#adding-custom-snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-surround'
+Plug 'chrisbra/Colorizer'
 
 " Initialize plugin system
 call plug#end()
@@ -95,6 +97,9 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Colorize HEX, RGB, RGBA codes on some filestypes
+:let g:colorizer_auto_filetype='css,scss'
 
 " -----------------------------------------------
 " MY KEYBINDINGS
