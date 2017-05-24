@@ -77,6 +77,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
 Plug 'chrisbra/Colorizer'
 Plug 'kchmck/vim-coffee-script'
+Plug 'cloudhead/neovim-fuzzy'
 
 " Initialize plugin system
 call plug#end()
@@ -91,7 +92,7 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 
 " Auto open NERDtree on enter vim
-au VimEnter *  NERDTree /git/
+"au VimEnter *  NERDTree /git/
 
 " Use another Emmet Leader key
 let g:user_emmet_leader_key=','
@@ -106,7 +107,8 @@ nmap ga <Plug>(EasyAlign)
 " Colorize HEX, RGB, RGBA codes on some filestypes
 let g:colorizer_auto_filetype='css,scss'
 
-
+" Use fzy as CtrlP
+nnoremap <C-p> :FuzzyOpen<CR>
 
 " -----------------------------------------------
 " MY KEYBINDINGS
@@ -124,7 +126,6 @@ inoremap jj <Esc>
 
 " Reindent
 nnoremap <leader>i mzgg=G`z<CR>
-
 
 " Toggle NERDtree
 map <C-n> :NERDTreeToggle<CR>
