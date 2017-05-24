@@ -43,6 +43,10 @@ set updatetime=250
 set splitbelow          " Horizontal split below current.
 set splitright          " Vertical split to right of current.
 
+" Don't store backups or swap files since important files are
+" always git tracked (also I save too often)
+set nobackup
+set noswapfile
 
 " -----------------------------------------------
 " MY PLUGINS
@@ -157,7 +161,12 @@ nnoremap <C-c> :bp\|bd #<CR>
 " -----------------------------------------------
 
 " Remove trailing spaces on save
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
+" Remove trailing spaces on save except for some filestypes
+" https://stackoverflow.com/a/10410590/1534704
+let exceptions = ['markdown']
+autocmd BufWritePre * if index(exceptions, &ft) < 0 | :%s/\s\+$//e
+
 
 " Automatically close parenthesis & quotes
 " on Insert mode
