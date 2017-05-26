@@ -78,6 +78,7 @@ Plug 'tpope/vim-surround'
 Plug 'chrisbra/Colorizer'
 Plug 'kchmck/vim-coffee-script'
 Plug 'cloudhead/neovim-fuzzy'
+Plug 'Numkil/ag.nvim'
 
 " Initialize plugin system
 call plug#end()
