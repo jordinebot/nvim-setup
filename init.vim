@@ -215,8 +215,8 @@ vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
 " Quick way to move lines of text up or down.
 
 " Normal mode
-nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
+nnoremap <C-j> :m .+1<CR>==
 
 " Insert mode
 inoremap <C-k> <Esc>:m .-2<CR>==gi
@@ -224,9 +224,7 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 
 " Visual mode
 vnoremap <C-k> :m '<-2<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
-
+vnoremap <C-j> :m '>+1<CR>gv=gv
 
 " -----------------------------------------------
 " BUFFER & SPLIT NAVIGATION
