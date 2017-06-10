@@ -71,7 +71,7 @@ Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-javascript-lib'
 Plug 'stanangeloff/php.vim'
-Plug 'mattn/webapi-vim'                 " https://github.com/mattn/emmet-vim/#adding-custom-snippets
+Plug 'mattn/webapi-vim' " https://github.com/mattn/emmet-vim/#adding-custom-snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
@@ -79,6 +79,8 @@ Plug 'chrisbra/Colorizer'
 Plug 'kchmck/vim-coffee-script'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'Numkil/ag.nvim'
+Plug 'c0r73x/neotags.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'fatih/vim-go'
 
 " Initialize plugin system
 call plug#end()
@@ -88,12 +90,31 @@ call plug#end()
 " -----------------------------------------------
 " PLUGIN SETTINGS
 " -----------------------------------------------
-
 " Enable deoplete (for local autocompletion) on startup
 let g:deoplete#enable_at_startup = 1
 
+
+" Config NeoTags
+"let regexpengine = 1
+"let g:neotags_enabled = 1
+"let g:neotags_run_ctags = 1
+"let g:neotags_highlight = 1
+"let g:neotags_appendpath = 0
+"let g:neotags_recursive = 0
+
+" Use this option for the_silver_searcher
+"let g:neotags_ctags_bin = 'ag -g "" '. getcwd() .' | ctags'
+
+" Tags highlight
+"highlight link phpFunctionsTag Identifier
+"highlight link phpClassesTag Identifier
+
 " Auto open NERDtree on enter vim
 "au VimEnter *  NERDTree /git/
+
+" Hide some files in NERDTree
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['node_modules', '.git$', 'tmp$', '.DS_Store']
 
 " Use another Emmet Leader key
 let g:user_emmet_leader_key=','
@@ -131,6 +152,13 @@ nnoremap <leader>i mzgg=G`z<CR>
 " Toggle NERDtree
 map <C-n> :NERDTreeToggle<CR>
 
+" Save on leaving Insert mode
+inoremap <Esc> <Esc>:w<CR>
+
+" Close current buffer without losing split
+" http://stackoverflow.com/a/4468491/1534704
+nnoremap <C-c> :bp\|bd #<CR>
+
 
 " -----------------------------------------------
 " ADVANCED SETTINGS
@@ -147,15 +175,8 @@ call matchadd('Trail', '\s\+$', 100)
 " Cancel a search with Esc
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
-" Save on leaving Insert mode
-inoremap <Esc> <Esc>:w<CR>
-
 " Replace all occurrences of word under cursor in the whole file
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
-
-" Close current buffer without losing split
-" http://stackoverflow.com/a/4468491/1534704
-nnoremap <C-c> :bp\|bd #<CR>
 
 
 " -----------------------------------------------
@@ -231,6 +252,13 @@ nnoremap <A-j> <C-w><C-j>
 nnoremap <A-k> <C-w><C-k>
 nnoremap <A-l> <C-w><C-l>
 
+" Split navigation with direction arrows
+" faster than A-* and it forces me to navigate
+" text with hjkl.
+map <up> <C-w><up>
+map <down> <C-w><down>
+map <left> <C-w><left>
+map <right> <C-w><right>
 
 
 " -----------------------------------------------
