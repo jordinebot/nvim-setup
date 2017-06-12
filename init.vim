@@ -206,6 +206,7 @@ vnoremap ) <Esc>`>a )<Esc>`<i( <Esc>
 vnoremap [ <Esc>`>a]<Esc>`<i[<Esc>
 vnoremap ] <Esc>`>a ]<Esc>`<i[ <Esc>
 vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
+vnoremap <Space> <Esc>`>a <Esc>`<i <Esc>
 " vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
 
 
