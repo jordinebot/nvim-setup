@@ -159,6 +159,8 @@ inoremap <Esc> <Esc>:w<CR>
 " http://stackoverflow.com/a/4468491/1534704
 nnoremap <C-c> :bp\|bd #<CR>
 
+" Abbreviations
+cnoreabbrev vr vertical resize
 
 " -----------------------------------------------
 " ADVANCED SETTINGS
@@ -258,6 +260,9 @@ map <down> <C-w><down>
 map <left> <C-w><left>
 map <right> <C-w><right>
 
+" Increase and decrease vertical splits width
+nnoremap <A-+> :vertical resize +10<CR>
+nnoremap <A--> :vertical resize -10<CR>
 
 " -----------------------------------------------
 "  SPECIAL SETTINGS
