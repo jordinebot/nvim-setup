@@ -181,6 +181,9 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 " Replace all occurrences of word under cursor in the whole file
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
+" Disable Ex Mode
+" https://vi.stackexchange.com/a/2692/11899
+nnoremap Q <Nop>
 
 " -----------------------------------------------
 " AUTOMATIC ACTIONS
