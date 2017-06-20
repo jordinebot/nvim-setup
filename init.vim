@@ -162,6 +162,7 @@ nnoremap <C-c> :bp\|bd #<CR>
 " Abbreviations
 cnoreabbrev vr vertical resize
 cnoreabbrev ag Ag
+cnoreabbrev W w
 
 " -----------------------------------------------
 " ADVANCED SETTINGS
