@@ -81,6 +81,7 @@ Plug 'cloudhead/neovim-fuzzy'
 Plug 'Numkil/ag.nvim'
 Plug 'c0r73x/neotags.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go'
+Plug 'wakatime/vim-wakatime'
 
 " Initialize plugin system
 call plug#end()
