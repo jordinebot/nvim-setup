@@ -25,6 +25,7 @@ set softtabstop=4   " spaces per TAB when editing
 set expandtab       " TAB with spaces
 set autoindent
 set copyindent      " copy indent from the previous line
+set nowrap          " By default, don't wrap long lines
 
 " Make searching case insensitive
 set ignorecase
@@ -82,6 +83,10 @@ Plug 'Numkil/ag.nvim'
 Plug 'c0r73x/neotags.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go'
 Plug 'wakatime/vim-wakatime'
+Plug 'posva/vim-vue'
+Plug 'sbdchd/neoformat'
+Plug 'terryma/vim-smooth-scroll'
+" Plug 'roxma/nvim-completion-manager'
 
 " Initialize plugin system
 call plug#end()
@@ -132,6 +137,12 @@ let g:colorizer_auto_filetype='css,scss'
 
 " Use fzy as CtrlP
 nnoremap <C-p> :FuzzyOpen<CR>
+
+" Smooth Scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " -----------------------------------------------
 " MY KEYBINDINGS
