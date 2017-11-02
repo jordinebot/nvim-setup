@@ -87,6 +87,7 @@ Plug 'posva/vim-vue'
 Plug 'sbdchd/neoformat'
 Plug 'terryma/vim-smooth-scroll'
 " Plug 'roxma/nvim-completion-manager'
+Plug 'jiangmiao/auto-pairs'
 
 " Initialize plugin system
 call plug#end()
@@ -212,18 +213,18 @@ autocmd BufWritePre * if index(exceptions, &ft) < 0 | :%s/\s\+$//e
 
 " Automatically close parenthesis & quotes
 " on Insert mode
-inoremap ( ()<Esc>i
+"inoremap ( ()<Esc>i
 " inoremap ' ''<Esc>i
-inoremap " ""<Esc>i
-inoremap {<CR> {<CR>}<Esc>ko
+"inoremap " ""<Esc>i
+"inoremap {<CR> {<CR>}<Esc>ko
 
 " Wrappings in visual mode
-vnoremap ( <Esc>`>a)<Esc>`<i(<Esc>
-vnoremap ) <Esc>`>a )<Esc>`<i( <Esc>
-vnoremap [ <Esc>`>a]<Esc>`<i[<Esc>
-vnoremap ] <Esc>`>a ]<Esc>`<i[ <Esc>
-vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
-vnoremap <Space> <Esc>`>a <Esc>`<i <Esc>
+"vnoremap ( <Esc>`>a)<Esc>`<i(<Esc>
+"vnoremap ) <Esc>`>a )<Esc>`<i( <Esc>
+"vnoremap [ <Esc>`>a]<Esc>`<i[<Esc>
+"vnoremap ] <Esc>`>a ]<Esc>`<i[ <Esc>
+"vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
+"vnoremap <Space> <Esc>`>a <Esc>`<i <Esc>
 " vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
 
 
