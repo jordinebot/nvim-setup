@@ -18,6 +18,9 @@ set showcmd
 " Highlight current line
 set cursorline
 
+" Show ruler on columns 80 & 120
+set colorcolumn=80,120
+
 " Tabs & Indent
 set tabstop=4       " spaces per TAB
 set shiftwidth=4    " spaces per TAB for autoindent
@@ -26,6 +29,10 @@ set expandtab       " TAB with spaces
 set autoindent
 set copyindent      " copy indent from the previous line
 set nowrap          " By default, don't wrap long lines
+
+" Folding
+set foldmethod=indent
+set foldnestmax=2
 
 " Make searching case insensitive
 set ignorecase
@@ -88,6 +95,8 @@ Plug 'sbdchd/neoformat'
 Plug 'terryma/vim-smooth-scroll'
 " Plug 'roxma/nvim-completion-manager'
 Plug 'jiangmiao/auto-pairs'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'rayburgemeestre/phpfolding.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -176,6 +185,10 @@ nnoremap <C-c> :bp\|bd #<CR>
 cnoreabbrev vr vertical resize
 cnoreabbrev ag Ag
 cnoreabbrev W w
+
+" Folding
+nnoremap <Space> za
+vnoremap <Space> za
 
 " -----------------------------------------------
 " ADVANCED SETTINGS
