@@ -97,6 +97,7 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'jiangmiao/auto-pairs'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'rayburgemeestre/phpfolding.vim'
+Plug 'mustache/vim-mustache-handlebars'
 
 " Initialize plugin system
 call plug#end()
