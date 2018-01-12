@@ -88,10 +88,11 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'Numkil/ag.nvim'
 Plug 'c0r73x/neotags.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'fatih/vim-go'
-Plug 'wakatime/vim-wakatime'
+" Plug 'fatih/vim-go'
+" Plug 'wakatime/vim-wakatime'
 Plug 'posva/vim-vue'
-Plug 'sbdchd/neoformat'
+" Plug 'sbdchd/neoformat'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'terryma/vim-smooth-scroll'
 " Plug 'roxma/nvim-completion-manager'
 Plug 'jiangmiao/auto-pairs'
@@ -110,24 +111,8 @@ call plug#end()
 " Enable deoplete (for local autocompletion) on startup
 let g:deoplete#enable_at_startup = 1
 
-
-" Config NeoTags
-"let regexpengine = 1
-"let g:neotags_enabled = 1
-"let g:neotags_run_ctags = 1
-"let g:neotags_highlight = 1
-"let g:neotags_appendpath = 0
-"let g:neotags_recursive = 0
-
-" Use this option for the_silver_searcher
-"let g:neotags_ctags_bin = 'ag -g "" '. getcwd() .' | ctags'
-
-" Tags highlight
-"highlight link phpFunctionsTag Identifier
-"highlight link phpClassesTag Identifier
-
-" Auto open NERDtree on enter vim
-"au VimEnter *  NERDTree /git/
+" Use NeoFormat on events...
+" autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
 
 " Hide some files in NERDTree
 let NERDTreeShowHidden=1
