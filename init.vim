@@ -114,6 +114,9 @@ let g:deoplete#enable_at_startup = 1
 " Use NeoFormat on events...
 " autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
 
+" Prettier settings
+let g:prettier#config#tab_width = 4
+
 " Hide some files in NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['node_modules', '.git$', 'tmp$', '.DS_Store']
@@ -210,22 +213,9 @@ let exceptions = ['markdown']
 autocmd BufWritePre * if index(exceptions, &ft) < 0 | :%s/\s\+$//e
 
 
-" Automatically close parenthesis & quotes
-" on Insert mode
-"inoremap ( ()<Esc>i
-" inoremap ' ''<Esc>i
-"inoremap " ""<Esc>i
-"inoremap {<CR> {<CR>}<Esc>ko
-
-" Wrappings in visual mode
-"vnoremap ( <Esc>`>a)<Esc>`<i(<Esc>
-"vnoremap ) <Esc>`>a )<Esc>`<i( <Esc>
-"vnoremap [ <Esc>`>a]<Esc>`<i[<Esc>
-"vnoremap ] <Esc>`>a ]<Esc>`<i[ <Esc>
-"vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
-"vnoremap <Space> <Esc>`>a <Esc>`<i <Esc>
-" vnoremap " <Esc>`>a"<Esc>`<i"<Esc>
-
+" Wrap .md files to 120 cols
+au BufRead,BufNewFile *.md setlocal textwidth=120
+au BufRead,BufNewFile *.md setlocal formatoptions+=t
 
 
 " -----------------------------------------------
