@@ -157,7 +157,7 @@ nnoremap <leader>i mzgg=G`z<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " Save on leaving Insert mode
-inoremap <Esc> <Esc>:w<CR>
+" inoremap <Esc> <Esc>:w<CR>
 
 " Close current buffer without losing split
 " http://stackoverflow.com/a/4468491/1534704
