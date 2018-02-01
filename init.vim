@@ -33,6 +33,7 @@ set nowrap          " By default, don't wrap long lines
 " Folding
 set foldmethod=indent
 set foldnestmax=2
+set foldlevel=99
 
 " Make searching case insensitive
 set ignorecase
@@ -87,14 +88,9 @@ Plug 'chrisbra/Colorizer'
 Plug 'kchmck/vim-coffee-script'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'Numkil/ag.nvim'
-Plug 'c0r73x/neotags.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'fatih/vim-go'
-" Plug 'wakatime/vim-wakatime'
 Plug 'posva/vim-vue'
-" Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'terryma/vim-smooth-scroll'
-" Plug 'roxma/nvim-completion-manager'
 Plug 'jiangmiao/auto-pairs'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'rayburgemeestre/phpfolding.vim'
@@ -110,9 +106,6 @@ call plug#end()
 " -----------------------------------------------
 " Enable deoplete (for local autocompletion) on startup
 let g:deoplete#enable_at_startup = 1
-
-" Use NeoFormat on events...
-" autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
 
 " Prettier settings
 let g:prettier#config#tab_width = 4
@@ -205,8 +198,6 @@ nnoremap Q <Nop>
 " AUTOMATIC ACTIONS
 " -----------------------------------------------
 
-" Remove trailing spaces on save
-" autocmd BufWritePre * :%s/\s\+$//e
 " Remove trailing spaces on save except for some filestypes
 " https://stackoverflow.com/a/10410590/1534704
 let exceptions = ['markdown']
@@ -242,10 +233,6 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 
 " Allow hidden buffers (to switch without save first)
 set hidden
-
-" Fast switch to previous buffer
-" Trying , as Emmet's Leader. Also this can be achieved with <S-Tab> too.
-" nnoremap <Leader><Leader> :e#<CR>
 
 " List buffers
 map <Leader>. :ls<CR>:b
