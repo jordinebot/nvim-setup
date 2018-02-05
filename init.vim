@@ -33,7 +33,7 @@ set nowrap          " By default, don't wrap long lines
 " Folding
 set foldmethod=indent
 set foldnestmax=2
-set foldlevel=99
+set nofoldenable
 
 " Make searching case insensitive
 set ignorecase
@@ -90,7 +90,7 @@ Plug 'cloudhead/neovim-fuzzy'
 Plug 'Numkil/ag.nvim'
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'terryma/vim-smooth-scroll'
+"Plug 'terryma/vim-smooth-scroll'
 Plug 'jiangmiao/auto-pairs'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'rayburgemeestre/phpfolding.vim'
@@ -131,10 +131,10 @@ let g:colorizer_auto_filetype='css,scss'
 nnoremap <C-p> :FuzzyOpen<CR>
 
 " Smooth Scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+" noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+" noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " -----------------------------------------------
 " MY KEYBINDINGS
