@@ -208,6 +208,8 @@ autocmd BufWritePre * if index(exceptions, &ft) < 0 | :%s/\s\+$//e
 au BufRead,BufNewFile *.md setlocal textwidth=120
 au BufRead,BufNewFile *.md setlocal formatoptions+=t
 
+" Trigger autoread when changing buffers or coming back to vim.
+au FocusGained,BufEnter * :silent! !
 
 " -----------------------------------------------
 " TEXT EDITING
