@@ -100,8 +100,6 @@ Plug 'vim-airline/vim-airline'
 " Initialize plugin system
 call plug#end()
 
-
-
 " -----------------------------------------------
 " PLUGIN SETTINGS
 " -----------------------------------------------
@@ -126,16 +124,10 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Colorize HEX, RGB, RGBA codes on some filestypes
-let g:colorizer_auto_filetype='css,scss'
+let g:colorizer_auto_filetype='css,scss,less'
 
 " Use fzy as CtrlP
 nnoremap <C-p> :FuzzyOpen<CR>
-
-" Smooth Scroll
-" noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-" noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " -----------------------------------------------
 " MY KEYBINDINGS
@@ -158,6 +150,7 @@ nnoremap <leader>i mzgg=G`z<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " Save on leaving Insert mode
+" Currently disabled for caution on YourDictionary.com
 " inoremap <Esc> <Esc>:w<CR>
 
 " Close current buffer without losing split
@@ -213,6 +206,7 @@ au BufRead,BufNewFile *.md setlocal textwidth=120
 au BufRead,BufNewFile *.md setlocal formatoptions+=t
 
 " Trigger autoread when changing buffers or coming back to vim.
+" Useful after `git checkout --` on external terminal.
 au FocusGained,BufEnter * :silent! !
 
 " -----------------------------------------------
