@@ -72,31 +72,30 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " Installed plugins
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree'
-Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'crusoexia/vim-javascript-lib'
-Plug 'stanangeloff/php.vim'
-Plug 'mattn/webapi-vim' " https://github.com/mattn/emmet-vim/#adding-custom-snippets
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'junegunn/vim-easy-align'
-Plug 'tpope/vim-surround'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'chrisbra/Colorizer'
-Plug 'kchmck/vim-coffee-script'
 Plug 'cloudhead/neovim-fuzzy'
+Plug 'crusoexia/vim-javascript-lib'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user'
+Plug 'kchmck/vim-coffee-script'
+Plug 'mattn/emmet-vim'
+Plug 'mattn/webapi-vim' " https://github.com/mattn/emmet-vim/#adding-custom-snippets
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'Numkil/ag.nvim'
+Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-"Plug 'terryma/vim-smooth-scroll'
-Plug 'jiangmiao/auto-pairs'
-Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'rayburgemeestre/phpfolding.vim'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'
+Plug 'scrooloose/nerdtree'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'stanangeloff/php.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 
 " Initialize plugin system
 call plug#end()
