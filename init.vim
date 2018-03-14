@@ -95,6 +95,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
 
 " Initialize plugin system
 call plug#end()
@@ -171,6 +173,9 @@ cnoreabbrev W w
 " Folding
 nnoremap <Space> za
 vnoremap <Space> za
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 
 " -----------------------------------------------
 " ADVANCED SETTINGS
