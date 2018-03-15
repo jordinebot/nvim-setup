@@ -96,6 +96,7 @@ Plug 'stanangeloff/php.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'w0rp/ale'
 
 " Initialize plugin system
 call plug#end()
@@ -168,6 +169,9 @@ vnoremap <Space> za
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+" Sort inside brackets
+nnoremap siB :?{?+,/}/-sort<CR>
 
 " -----------------------------------------------
 " ADVANCED SETTINGS
