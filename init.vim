@@ -73,6 +73,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Installed plugins
 Plug 'airblade/vim-gitgutter'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'chrisbra/Colorizer'
 Plug 'cloudhead/neovim-fuzzy'
@@ -140,6 +141,7 @@ let mapleader=","
 " Edit/reload vimrc
 nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
+nmap <Leader>es :e ~/.config/nvim/snippets/my_snippets.json<CR>
 
 " better Esc
 inoremap jj <Esc>
@@ -172,6 +174,8 @@ cmap w!! w !sudo tee > /dev/null %
 
 " Sort inside brackets
 nnoremap siB :?{?+,/}/-sort<CR>
+nnoremap si{ :?{?+,/}/-sort<CR>
+nnoremap si( :?(?+,/)/-sort<CR>
 
 " -----------------------------------------------
 " ADVANCED SETTINGS

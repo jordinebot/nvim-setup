@@ -13,5 +13,12 @@
         },
         "abbreviations" : {
         }
+    },
+    "vue" : {
+        "filters" : "vue",
+        "profile" : "vue",
+        "snippets" : {
+            "vc" : "<template>\n\t<div></div>\n</template>\n\n<script>\nexport default {\n\tdata() {\n\t\treturn {};\n\t},\n};\n</script>\n\n<style scoped lang=\"scss\">\n</style>"
+        }
     }
 }
