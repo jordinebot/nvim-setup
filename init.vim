@@ -213,6 +213,10 @@ autocmd BufWritePre * if index(exceptions, &ft) < 0 | :%s/\s\+$//e
 au BufRead,BufNewFile *.md setlocal textwidth=120
 au BufRead,BufNewFile *.md setlocal formatoptions+=t
 
+" Prevent broken syntax highlighting on Vue SFC
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
+autocmd FileType vue syntax sync fromstart
+
 " Trigger autoread when changing buffers or coming back to vim.
 " Useful after `git checkout --` on external terminal.
 au FocusGained,BufEnter * :silent! !
