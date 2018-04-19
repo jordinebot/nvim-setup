@@ -98,6 +98,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
+Plug 'sirver/ultisnips'
 
 " Initialize plugin system
 call plug#end()
@@ -117,7 +118,6 @@ let NERDTreeIgnore=['node_modules', '.git$', 'tmp$', '.DS_Store']
 
 " Use another Emmet Leader key
 let g:user_emmet_leader_key=','
-let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/snippets/my_snippets.json')), "\n"))
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -131,6 +131,12 @@ let g:colorizer_auto_filetype='css,scss,less'
 " Use fzy as CtrlP
 nnoremap <C-p> :FuzzyOpen<CR>
 
+" Ultisnips
+let g:UltiSnipsSnippetsDir='~/.config/nvim/ultisnips'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
 " -----------------------------------------------
 " MY KEYBINDINGS
 " -----------------------------------------------
@@ -141,7 +147,6 @@ let mapleader=","
 " Edit/reload vimrc
 nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
-nmap <Leader>es :e ~/.config/nvim/snippets/my_snippets.json<CR>
 
 " better Esc
 inoremap jj <Esc>
