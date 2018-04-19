@@ -78,6 +78,7 @@ Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'chrisbra/Colorizer'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'crusoexia/vim-javascript-lib'
+Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-line'
@@ -93,12 +94,12 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'sirver/ultisnips'
 Plug 'stanangeloff/php.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
-Plug 'sirver/ultisnips'
 
 " Initialize plugin system
 call plug#end()
