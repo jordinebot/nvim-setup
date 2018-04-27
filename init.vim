@@ -268,10 +268,28 @@ nnoremap <A-l> <C-w><C-l>
 " Split navigation with direction arrows
 " faster than A-* and it forces me to navigate
 " text with hjkl.
-map <up> <C-w><up>
-map <down> <C-w><down>
-map <left> <C-w><left>
-map <right> <C-w><right>
+" map <up> <C-w><up>
+" map <down> <C-w><down>
+" map <left> <C-w><left>
+" map <right> <C-w><right>
+
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
+
+map <silent> <left> :call WinMove('h')<cr>
+map <silent> <down> :call WinMove('j')<cr>
+map <silent> <up> :call WinMove('k')<cr>
+map <silent> <right> :call WinMove('l')<cr>
 
 " Increase and decrease vertical splits width
 nnoremap <A-+> :vertical resize +10<CR>
@@ -284,11 +302,11 @@ nnoremap <A--> :vertical resize -10<CR>
 " Put at the very end of your .vimrc file.
 " http://vimawesome.com/plugin/php-vim-shouldve-said-no
 function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
+    hi! def link phpDocTags  phpDefine
+    hi! def link phpDocParam phpType
 endfunction
 
 augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
+    autocmd!
+    autocmd FileType php call PhpSyntaxOverride()
 augroup END
