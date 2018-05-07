@@ -183,6 +183,12 @@ nnoremap siB :?{?+,/}/-sort<CR>
 nnoremap si{ :?{?+,/}/-sort<CR>
 nnoremap si( :?(?+,/)/-sort<CR>
 
+" Enable/Disable spell check for current buffer
+nnoremap <leader>o :setlocal spell spelllang=en_us<CR>
+nnoremap <leader>O :setlocal nospell<CR>
+" ]s next, [s previous, z= suggestions, zg add word
+
+
 " -----------------------------------------------
 " ADVANCED SETTINGS
 " -----------------------------------------------
