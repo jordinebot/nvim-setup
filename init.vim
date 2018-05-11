@@ -79,12 +79,12 @@ Plug 'chrisbra/Colorizer'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'crusoexia/vim-javascript-lib'
 Plug 'honza/vim-snippets'
-Plug 'itchyny/calendar.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script'
+Plug 'mattn/calendar-vim'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/webapi-vim' " https://github.com/mattn/emmet-vim/#adding-custom-snippets
 Plug 'mustache/vim-mustache-handlebars'
@@ -224,8 +224,8 @@ autocmd BufWritePre * if index(exceptions, &ft) < 0 | :%s/\s\+$//e
 
 
 " Wrap .md files to 120 cols
-au BufRead,BufNewFile *.md setlocal textwidth=120
-au BufRead,BufNewFile *.md setlocal formatoptions+=t
+au BufRead,BufNewFile *.md,*.wiki setlocal textwidth=120
+au BufRead,BufNewFile *.md,*.wiki setlocal formatoptions+=t
 
 " Prevent broken syntax highlighting on Vue SFC
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
