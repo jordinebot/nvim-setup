@@ -32,7 +32,7 @@ set nowrap          " By default, don't wrap long lines
 
 " Folding
 set foldmethod=indent
-set foldnestmax=2
+set foldnestmax=4
 set nofoldenable
 
 " Make searching case insensitive
