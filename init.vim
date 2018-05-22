@@ -92,8 +92,8 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/webapi-vim' " https://github.com/mattn/emmet-vim/#adding-custom-snippets
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'Numkil/ag.nvim'
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'vue'] }
 Plug 'posva/vim-vue'
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'vue'] }
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'scrooloose/nerdtree'
