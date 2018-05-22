@@ -22,13 +22,15 @@ set cursorline
 set colorcolumn=80,120
 
 " Tabs & Indent
-set tabstop=4       " spaces per TAB
-set shiftwidth=4    " spaces per TAB for autoindent
-set softtabstop=4   " spaces per TAB when editing
+set tabstop=2       " spaces per TAB
+set shiftwidth=2    " spaces per TAB for autoindent
+set softtabstop=2   " spaces per TAB when editing
 set expandtab       " TAB with spaces
 set autoindent
 set copyindent      " copy indent from the previous line
 set nowrap          " By default, don't wrap long lines
+
+
 
 " Folding
 set foldmethod=indent
@@ -90,7 +92,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/webapi-vim' " https://github.com/mattn/emmet-vim/#adding-custom-snippets
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'Numkil/ag.nvim'
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html', 'vue'] }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'vue'] }
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rayburgemeestre/phpfolding.vim'
@@ -114,7 +116,7 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 
 " Prettier settings
-let g:prettier#config#tab_width = 4
+let g:prettier#config#tab_width = 2
 
 " Hide some files in NERDTree
 let NERDTreeShowHidden=1
