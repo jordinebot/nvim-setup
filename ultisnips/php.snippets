@@ -16,3 +16,19 @@ snippet err "Show all PHP errors"
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 endsnippet
+
+snippet ifs "Shorthand if" b
+$${1:variableName} = ($2${3: == }$4) ? $2 : $5 ;
+endsnippet
+
+snippet ppr "Print array for debuging" b
+echo '<pre>'.print_r($${1:variableName},true).'</pre>';
+$0
+endsnippet
+
+snippet pprd "Print array for debuging and die" b
+echo '<pre>'.print_r($${1:variableName},true).'</pre>';
+die();
+$0
+endsnippet
+
