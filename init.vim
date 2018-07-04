@@ -22,9 +22,9 @@ set cursorline
 set colorcolumn=80,120
 
 " Tabs & Indent
-set tabstop=2       " spaces per TAB
-set shiftwidth=2    " spaces per TAB for autoindent
-set softtabstop=2   " spaces per TAB when editing
+set tabstop=4       " spaces per TAB
+set shiftwidth=4    " spaces per TAB for autoindent
+set softtabstop=4   " spaces per TAB when editing
 set expandtab       " TAB with spaces
 set autoindent
 set copyindent      " copy indent from the previous line
@@ -116,7 +116,7 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 
 " Prettier settings
-let g:prettier#config#tab_width = 2
+let g:prettier#config#tab_width = 4
 
 " Hide some files in NERDTree
 let NERDTreeShowHidden=1
@@ -291,6 +291,12 @@ nnoremap <A--> :vertical resize -10<CR>
 " -----------------------------------------------
 "  SPECIAL SETTINGS
 " -----------------------------------------------
+
+" vim-vue syntax fix
+" https://github.com/posva/vim-vue/issues/76#issuecomment-398732261
+let g:vue_disable_pre_processors=1
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.less.pug
 
 " Put at the very end of your .vimrc file.
 " http://vimawesome.com/plugin/php-vim-shouldve-said-no
