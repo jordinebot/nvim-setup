@@ -22,9 +22,9 @@ set cursorline
 set colorcolumn=80,120
 
 " Tabs & Indent
-set tabstop=2       " spaces per TAB
-set shiftwidth=2    " spaces per TAB for autoindent
-set softtabstop=2   " spaces per TAB when editing
+set tabstop=4       " spaces per TAB
+set shiftwidth=4    " spaces per TAB for autoindent
+set softtabstop=4   " spaces per TAB when editing
 set expandtab       " TAB with spaces
 set autoindent
 set copyindent      " copy indent from the previous line
@@ -76,7 +76,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Installed plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'captbaritone/better-indent-support-for-php-with-html'
+"Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'chrisbra/Colorizer'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'crusoexia/vim-javascript-lib'
@@ -87,20 +87,21 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
-Plug 'kchmck/vim-coffee-script'
+"Plug 'kchmck/vim-coffee-script'
 Plug 'mattn/calendar-vim'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/webapi-vim' " https://github.com/mattn/emmet-vim/#adding-custom-snippets
-Plug 'mustache/vim-mustache-handlebars'
+"Plug 'mustache/vim-mustache-handlebars'
 Plug 'Numkil/ag.nvim'
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'vue'] }
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'rayburgemeestre/phpfolding.vim'
+"Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'sirver/ultisnips'
-Plug 'stanangeloff/php.vim'
+"Plug 'stanangeloff/php.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -117,7 +118,7 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 
 " Prettier settings
-let g:prettier#config#tab_width = 2
+let g:prettier#config#tab_width = 4
 
 " Hide some files in NERDTree
 let NERDTreeShowHidden=1
