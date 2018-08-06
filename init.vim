@@ -298,7 +298,7 @@ nnoremap <A--> :vertical resize -10<CR>
 " https://github.com/posva/vim-vue/issues/76#issuecomment-398732261
 let g:vue_disable_pre_processors=1
 autocmd FileType vue syntax sync fromstart
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.less.pug
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript
 
 " Put at the very end of your .vimrc file.
 " http://vimawesome.com/plugin/php-vim-shouldve-said-no
