@@ -1,8 +1,31 @@
-snippet ** "Method documentation block "
-/**
- * Definition $0
- * @param {number} x - The x value.
- * @param {number} y - The y value.
- * @return {number} Description
- */
+snippet vjs "Vue Component Main Javascript File"
+export default {
+	name: "ComponentName",
+	components: {},
+	props: {},
+}
+endsnippet
+
+snippet vdata "Vue Data object"
+export default function() {
+	return {
+		title: "My Component"
+	}
+}
+endsnippet
+
+snippet vhooks "Vue Hooks External File"
+export function beforeCreate() {}
+
+export function created() {}
+
+export function mounted() {}
+
+export function beforeUpdate() {}
+
+export function updated() {}
+
+export function beforeDestroy() {}
+
+export function destroyed() {}
 endsnippet
