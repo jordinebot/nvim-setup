@@ -158,7 +158,9 @@ nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
 
 " better Esc
-inoremap jj <Esc>
+inoremap jj <Esc>j
+inoremap kk <Esc>k
+
 
 " Reindent
 nnoremap <leader>i mzgg=G`z<CR>
@@ -173,6 +175,9 @@ map <C-n> :NERDTreeToggle<CR>
 " Close current buffer without losing split
 " http://stackoverflow.com/a/4468491/1534704
 nnoremap <C-c> :bp\|bd #<CR>
+
+" Close all buffers but current
+nnoremap <Leader>co :%bd<bar>e #<bar>bd #<CR><CR>
 
 " Abbreviations
 cnoreabbrev vr vertical resize
